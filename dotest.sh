@@ -1,4 +1,4 @@
-for variable in "sst" "t2m" "precip" ; do
+for  variable in "sst" "t2m" "precip" ; do
    for domain in "USA" "Global65" "Global90" "Nino3.4"; do
 
        if [ "$variable" == "sst" ] && [ "$domain" == "USA" ] ; then
