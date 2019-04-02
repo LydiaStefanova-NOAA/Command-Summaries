@@ -24,7 +24,6 @@
         cdo inttime,1987-01−01,12:00,2hour infile outfile   # interpolates a timeset starting on given date to two hourly
 
     JOIN NETCDFS
-        ncrcat file*.nc outfile.nc # concatenate in time, must have same structure
         
         cdo copy in1 in2c in3 outfile # concatenate files with different time steps of the same variable
         cdo cat in1 in2 in3c outfilec # adds the three timesteps to an existing outfile
@@ -42,7 +41,6 @@
         cdo selvar,foo1,foo2 infile outfile # outfile conains only variables foo1 and foo2
         cdo delvar,foo1,foo2 infile outfile # outfile contains everything except for foo1 and foo2
             (also sellevel,selcode/delcode, etc)
-        ncks -v foo infile.nc foo.nc
 
     SUBSET OF TIMES
         cdo seltimestep,timesteps infile outfile
@@ -52,17 +50,15 @@
     SUBSET IN SPACE    
         cdo sellonlatbox,lon1,lon2,lat1,lat2 ifile ofile
         cdo selindexbox,idx1,idx2,idy1,idy2 ifile ofile    
-        ncea -d latitude,59.0,84.0 -d longitude,-95,-10 infile.nc outfile.nc
 
     MODIFY TIME
-        setdate/settime/setday/setmon/setyear/setunits - set all date/time/day/month/year/untis to given value
+        cdo setdate/settime/setday/setmon/setyear/setunits - set all date/time/day/month/year/untis to given value
         cdo setaxis,2011-01-16,12:00,1mon infile outfile # data starts on given date, incremented by given increment
         cdo shifttime,-15days infile outfile # shift all timeteps by given value
    
     MODIFY VARIABLE NAMES/LEVELS
         cdo chvar,oldvar1,newvar1,oldvar2,newvar2 infile outfile
         cdo chlev,oldlev,newlev infile outfile
-        ncrename -v lat,latitude infile.nc
 
     MASK A BOX
         cdo masklonlatbox,lon1,lon2,lat1,lat2 infile outfile # Elements in box are untouched, elements outside are set to missing
