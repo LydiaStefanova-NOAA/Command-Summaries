@@ -1,0 +1,8 @@
+    JOIN NETCDFS
+        ncrcat file*.nc outfile.nc # concatenate in time, must have same structure
+    SUBSET IN SPACE
+        ncea -d latitude,59.0,84.0 -d longitude,-95,-10 infile.nc outfile.nc
+    SUBSET VARIABLE
+        ncks -v foo infile.nc foo.nc
+    RENAME VARIABLE
+        ncrename -v lat,latitude infile.nc
