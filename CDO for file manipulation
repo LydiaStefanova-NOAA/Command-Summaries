@@ -1,0 +1,138 @@
+    https://src.fedoraproject.org/repo/pkgs/cdo/cdo.pdf/90a93037089dddf6f8919b9d6c30bff7/cdo.pdf
+    
+    GET INFORMATION ON FILE
+        cdo sinfo infilec # shows a summary of contents
+        cdo nvar infile # shows number of variables
+            (also nlevel,nyear, nmon, ndate, ntime)
+        cdo showvar infile # variable names
+            (also showstdname, showlevel, showyear, showmon, showdate, showtime)
+        cdo vardes infile # variable description table
+            (also griddes, vct [variable coordinate table])
+            
+    REMAP TO 1p00 bilinear/conservative/distance-weighted
+        cdo remapbil,r361x180 infile outfile
+        cdo remapcon,r361,180 infile outfile      # appropriate for precipitation
+        cdo remapdis,r361,180 infile outfile
+    
+    VERTICAL INTERPOLATION  
+        ml2pl/ml2hl (hybrid model level to pressure level, hyprid model level to height level)
+                    the relationship between pressure and height levels used is plev=101325*exp(hlev/-7000)
+                    plevels in pascals, hlevels in meters
+        cdo ml2pl,92500,80000,20000 infile outfile    # 925, 800, 300mb
+        
+    TIME INTERPOLATION
+        cdo inttime,1987-01−01,12:00,2hour infile outfile   # interpolates a timeset starting on given date to two hourly
+
+    JOIN NETCDFS
+        ncrcat file*.nc outfile.nc # concatenate in time, must have same structure
+        
+        cdo copy in1 in2c in3 outfile # concatenate files with different time steps of the same variable
+        cdo cat in1 in2 in3c outfilec # adds the three timesteps to an existing outfile
+        
+        cdo replace in1 in2 outfile  # replaces common variables in both files with those of in1.nc and write result
+        
+        cdo merge in1 in2 in3 outfile # joins different variables for same times (in files must have same number of times)
+        cdo mergetime 
+   
+   SPLIT NETCDFS IN TIME
+        cdo splithour infile hr  # makes separate files for each hour stamp -> hr00, hr06, hr12, hr18
+            (also splitday, splitmon, splitseas, splityear)
+
+   SUBSET OF VARIABLES OR LEVELS
+        cdo selvar,foo1,foo2 infile outfile # outfile conains only variables foo1 and foo2
+        cdo delvar,foo1,foo2 infile outfile # outfile contains everything except for foo1 and foo2
+            (also sellevel,selcode/delcode, etc)
+        ncks -v foo infile.nc foo.nc
+
+    SUBSET OF TIMES
+        cdo seltimestep,timesteps infile outfile
+        cdo seldate,datestart,dateend infile outfile #format for date: YYYY-MM-DDThh:mm)
+            (also seltime,selhour, selday, selmon, selyear, selseas, seldate)
+            
+    SUBSET IN SPACE    
+        cdo sellonlatbox,lon1,lon2,lat1,lat2 ifile ofile
+        cdo selindexbox,idx1,idx2,idy1,idy2 ifile ofile    
+        ncea -d latitude,59.0,84.0 -d longitude,-95,-10 infile.nc outfile.nc
+
+    MODIFY TIME
+        setdate/settime/setday/setmon/setyear/setunits - set all date/time/day/month/year/untis to given value
+        cdo setaxis,2011-01-16,12:00,1mon infile outfile # data starts on given date, incremented by given increment
+        cdo shifttime,-15days infile outfile # shift all timeteps by given value
+   
+    MODIFY VARIABLE NAMES/LEVELS
+        cdo chvar,oldvar1,newvar1,oldvar2,newvar2 infile outfile
+        cdo chlev,oldlev,newlev infile outfile
+        ncrename -v lat,latitude infile.nc
+
+    MASK A BOX
+        cdo masklonlatbox,lon1,lon2,lat1,lat2 infile outfile # Elements in box are untouched, elements outside are set to missing
+        cdo setclonlatbox,c,lon1,lon2,lat1,lat2 ifile ofile  # Elements inside the box are set to constant, elements outside untouched
+    
+    ENLARGE
+        If you want to add globmean (1 number) to a field (e.g. at r361,180) 
+        cdo enlarge,r361x180 globmeanfile tmpfile
+        cdo add globfield tmpfile outfile
+        (same in one line: cdo add globmeanfile -enlarge,r361x180 globfield outfile
+    
+    SET MISSING VALUES
+        setmisval/setctomiss/setmisstoc 
+        setrtomiss,rmin,rmax (set range to missing value)
+    
+    ARITHMETICS
+        expr/exprf
+          cdo expr,'var1=aprl+aprc;var2=ts-273.15;' infile outfile
+          
+        abs/sqr/sqrt/exp/ln/log10/sin/cos/tan/asin/acos/atan
+          cdo sqrt infile outfile
+        
+        addc/subc/mulc/divc
+          cdo addc,-273 infile outfile
+        
+        add/sub/mul/div/min/max/atan2
+          cdo add infile1 infile2 outfile
+        
+    ARITHMETICS WITH MONTHS, DAYS
+        ymonadd/ymonsub/ymonmul/ymondiv               # add/sub/mul/div with multy-year time average
+          cdo ymonsub infile -ymonavg infile outfile
+        muldpm/divdpm/muldpy/divdpy                   # mul/div by days per month or days per year
+        
+    FIELD STATISTICS
+    (mean and average are the same if there is no missing data: 
+    An artificial distinction is made between the notions mean and average. The mean is regarded as a
+    statistical function, whereas the average is found simply by adding the sample members and dividing the
+    result by the sample size. 
+           For example, 
+           the mean of 1, 2, miss and 3 is (1 + 2 + 3)/3 = 2, whereas 
+           the average is (1 + 2 + miss+ 3)/4 = miss/4 = miss.)
+           
+        ensmin/ensmax/enssum/ensmean/ensavg/ensstd/ensvar
+        fldmin/fldmax/fldsum/fldmean/fldavg/fldstd/fldvar
+        zonmin/zonmax/zonsum/zonmean/zonavg/zonstd/zonvar
+        mermin/mermax/mersum/mermean/meravg/merstd/mervar
+        vertmin/vertmax/vertsum/vertmean/vertavg/vertstd
+        selmin/selmax/selsum/selmean/selavg/selstd
+        runmin/runmax/runsum/runmean/runavg/runstd
+        timmin/timmax/timsum/timmean/timavg/timstd
+        hourmin/hourmax/hoursum/hourmean/houravg/hourstd
+        daymin/daymax/daysum/daymean/dayavg/daystd
+        monmin/monmax/monsum/monmean/monavg/monstd
+        yearmin/yearmax/yearsum/yearmean/yearavg/yearstd
+        seasmin/seasmax/seassum/seasmean/seasavg/seastd
+        ydaymin/ydaymax/ydaymean/ydayavg/ydaystd            # multy-year day
+        ymonmin/ymonmax/ymonmean/ymonavg/ymonstd            # multy-year month
+        yseasmin/yseasmax/yseasmean/yseasavg/yseasstd
+        
+    TRENDS
+    Defined as o(t, x) = i(t, x) − (a(x) + b(x)t)
+        cdo detrend infile outfile                # remove trend
+        cdo trend infile afile bfile
+        cdo subtrend infile afile bfile outfile
+        cdo trend infile afile bfile
+       
+    MISC
+        timsort - sort over time
+        const,c,grid - constant field
+        random,grid - multiply variables
+        gradsdes - grads data descriptor file
+        gradsdes2 - grads data descriptor file (v2 map)
+        mastrfu - mass stream function from zonal mean of v-velocity on pressure levels
