@@ -1,0 +1,12 @@
+
+alias go2jetP='ssh -L31662:localhost:31662 -XY Lydia.B.Stefanova@jet-rsa.princeton.rdhpcs.noaa.gov'
+
+SCP to/from Jet. Only works if you've already established a login session.
+
+# scp to jet
+#scp -P 31662 localfile Lydia.B.Stefanovan@localhost:/path/to/file/on/remote
+# scp from theia
+#scp -P 31662 Lydia.B.Stefanova@localhost:/path/to/file/on/remote localfile
+
+tcsh: alias cp2t "echo !:1 !:2"
+bash: alias myalias='function __myalias() { echo "Hello $*"; unset -f __myalias; }; __myalias'
