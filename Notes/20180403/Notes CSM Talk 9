@@ -1,0 +1,22 @@
+
+Peter Gleckler presenting
+
+Lee et al 2018
+Quantifying agreement between Obs and Sim't Extratropical Modes in CMIP5
+
+EOF1-based modes
+EOF2-based modes
+
+similar stuff: stoner and wuebbles 2009 (CMIP3(
+Phillips et al 2014 expanded analysis with diagnostic package (ncar cdep (cedp?) package)
+
+NAO NAM PNA (dominant season DJF)
+SAM (dominant season JJA) 
+look at sensitivity/skill seasonality
+
+obs1: noaa cires 20cr; hadlsstv1
+obs2: era 20c; hadlsst v2
+obs3 hadslp3; ersstv3b
+pcmdi metrics package PMP
+
+Check out the PCMDI metrics (PMP) package
