@@ -1,1 +1,56 @@
+Angel Adames, UMichigan
+MJO: What have we learned from it and where is our field heading
+- thermodynamics of the tropics; mjo theory; simulations and diagnostics; response to climate change; 
 
+small variability in space for temperature; large for humidity/rain/convective cells
+deep convection -> each convective element warms up the atmosphere through diabatic heating; the heating thickenes the troposheric layer; because the coriolis force near the equator is small, 
+gravity waves relax the thickened layer back to its climatological value after a time tg; 
+this results in a net balance between upward motion and heating that is known as the "weak temperature gradient approximation"; 
+
+so from each convective cell ther are ripple waves; think of rain on puddle; 
+timescales: tg - timescale for gravity waves to relax temperature; tc - timescale for convection to relax humidity; tw - disturbance timescale
+non dimentional Nmode=tg**2/(tw*tc); if Nmodel <<1 tg<<tc - moisture dominates (moisture modes); if Nmode>>1 - temperature (Moist Kelvin waves) dominate
+
+a) moisture-dominated regime: 
+Long timescales / slow propagation [~Monsoons]
+balanced wind field (geostrophic?)
+rpecip due to water vapor impact
+
+b) temperature (buoyancy) dominated reegime
+short timescales/fast propagation [~days]
+unbalanced wind field (acceleration is important)
+precip due to CAPE/CIN/Buoyancy (temperature) 
+
+The two regimes are two fundamental modes in the tropics
+Paper Adames 2017 - relationship between moisture and precipitation in the tropics; obs show that when MJO is active both moisture and rainfall are high
+obs support the notion that MJO is driven by fluctioantions of water vapor
+
+---
+The moisture mode framework:
+
+is not necessarily the "correct" MJO theory but arguably the most scrutinized theory
+its predictions: 
+- precip anomaly can be diagnosed from moisture
+- MJO evoltuoion can be understood via moisture/MSE budget
+- MJO initiation is due to moistening of the atmosphere
+- MJO simulations can be improved if precip/moisture relation is improved (ie. if convection scheme is properly sensitive to moisture0
+ Moisture and MSE budgets indicate that MJO propagation is due to horizontal and vertical moisture advection; 
+ primary maintenance mechanism is large scale ascent forced by anomalous long wave radiative heating
+ 
+ Jiang et al 2015L diagnostics show that models for which RH and precip are less similar have the strongest MJO (best MJO when precip most 
+ sensitive to RH); Gonzalez and Jiang 2016 - find that models with more humid mean state have stronget MJO; Kim 2017 - similar
+ ERA-Interim vs operational ECMWF - MJO in model is weaker and mean state is drier; MSE budget shows weaker advection (there is less moisture to advect);
+ 
+ Shie et al 2018 - mechanism-denial experiments; graogs frequency vs zonal wavenumber; Ways to kill MJO - a) mouisture nudged to climate; b) remove climate LW heating
+ (Wheeler kiladis diagram OLR)
+ 
+ cmip3/cmip5 - not so good at MJO (Line et al 2016); current generation - much more robust
+ 
+ Climate change - response to increasing CO2- most studies indicate MJO amplitude willincrease as climate warms; mechanism unclear; also
+ (Rushley et al 2019) MJO horizontal scale increases; phase speed tends to increase; why? - because increasing moisture gradients (speed), increasing static stability (slow), decreasing zonal wavenumber (speed), 
+ increased convective timescale- ie rain lasts longer (slow); 
+ Maloney et al 2019: MJO goes taller as the tropopause deepens; unchanging orvweakening anomalous wind;
+ Wolding et al 2017: weakening of global teleconnection signal ; increased static stability leads to weaker upper level divergence which leads to weaker Rossby wave propagation to higher latitudes.
+ 
+ 
+ --
