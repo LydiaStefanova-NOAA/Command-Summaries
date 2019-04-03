@@ -1,0 +1,38 @@
+Siegfried Schubert
+"A systematic approach to assessing and improving the simulation of leading modes of climate variabilty)
+
+Improving our climate models - attempting to deduce model errors from errors in climate statistics has proven difficult
+
+A: model formulation errors
+B: cleaate mean bias
+C: errors in variability (leading modes of climate variability)
+D: Forecast errors (subseasnoal and seasonal)
+
+a affects b, c, d; b and c affect each other; both b and c affect d
+
+Leith 1978
+Klinker and Sardeshmukh 1992
+Schubert and Chang 1996
+Gelaro et al 2017
+
+looking at tendency errors early on 
+
+dx(t0)/dt = f(x(t0)) + dx(t0)
+
+
+1) Replay: force a model to track a pre-existing analysis (Takacs et al 2018; Orb et al 2017)
+2) Tendency Bias Correction (TBC) Chang et al 2019: 
+
+BASIC Q: TO WHAT EXTENT DOES TBC EHWEN APPLIED GLOBALLY LEAD TO IMPROVEMENTS IN THE MODELS LONG TERM CLIMATE (BIAS/CLIMATE VARIABILITY INCLUDING LEADING MODES OF VARIABILITY/FORECAST SKILL AT S2S)
+
+Two examples: 
+a) Leading subseasonal modes during boreal summer
+- highlights from obs
+results from geos agcm
+b) boreal winter interannual variability and enso
+
+Boreal winter: PNA, NA, AO, etc dominate NH extratropical subseasona var
+Boreal summmer: Rossby waves - jet waves as a jwave guide for jja weather - ilustrated with 200mb v wind, correlation of 
+single point over the great plains with points everywhere else
+
+
