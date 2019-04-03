@@ -1,0 +1,33 @@
+Nathaniel Johnson GFDL
+
+ENSO, NAO, etc: 
+= which modes are most predictable on s2s
+relationship between them
+
+Study by Xiang et al 2019; target: DJF NH weeks 1-7 surface air temperature, 2003-2013 hindcasts
+
+three most predictable modes: ENSO mode; NAO mode; Eurasian Mode; skill to week 5;
+colors: surface air temperature shading, 500hp heigth contours
+
+- skill not strongly tied to MJO
+Eurasian and NAO mode skill related to initial stratospheric polar vortex strength
+
+exploring identification of windows of opportunity: composites of high/low skill OLR IC pattern
+
+--
+- Predictability from distinct flavors of ENSO
+- Role of atmospheric and land initial conditions (dry california during 2015/2016 ENSO is erroneously forecast as wet unless atm and land IC are included)
+
+Initial conditions from stratosphere are extremely important for high latitude MAM skill T2m over Eurasia
+
+Arctic oscillation patern second key to predictability (after ENSO) - but to get it correctly you need the correct stratospheric IC 
+
+Scaife and Smith (2018) = NAO skill increases with ensemble size: substantail winter prediction skill of NAO index for long leads even beyond 1 year in Met office Predictions
+
+
+SUmmary: 
+- subseasonal prediction - identified predictable modes of variabilty and their contributions to skillful weeks 3-5 temperature forecasts
+- subseasonal prediction: demonstrated potential for identifying windows of opportunity for skillful prediction of teleconnection patterns and their impacts
+- seasonal prediction; identified sourcse of skill independent of the canonical ENSO influence (ENSO flavors, Land/Atmosphere ICs at short leads, stratosphere) and demonstrated their utility in practical prediction problems
+
+
