@@ -1,3 +1,4 @@
+YA Ckunate nidekubg synnut 2919: wirjsgio ib nides if varuavukuty
 Overall topic: Modes of variability
 - tropical modes of variability
 - extratropical modes
@@ -8,4 +9,34 @@ potential science astudies such as intercomparison of modes in various models an
 sharing of resources - code and data; 
 ---
 Morning session 1: Forced and free tropical modes: QBO, MJO
+
 1. Clara Orbe, NASA: The QBO - current understanding and challenges in model development
+QBO is the primary mode of interannual variability in the tropical stratosphere, consisting of alternating descending westerly and easterly zonal winds; 
+(Coy et al 2016) time scale ~28 mo; pressure/time axes, zonal wind plot; references: Thompson et al 2001 Marshall and adam 2009, randel and wu 1996, hurwitz et al 2013, Oman and Douglass 2014
+affects arctic polar vortex, NAO, MJO; may change under climate change
+first seein reed 1960, veryard and ebdon 1961; Lindzen and Holton 1968
+69s through 80s focus was on undersanding which equatorial waves are involved in forcingi the qbo;
+parallel efforts understand the meridional circulations induced by the qbo itself Plumb and Bell 1982
+QBO is a tropical phenomenon but interacts with high lats
+Modeling: need mixed rossby gravity waves and kelvin waves, necessary to have high vertical resolution (~0.5km) = but even so small scale gravity waves missing - but needed
+for some while - models - impose QBO from climatology; others used parameterized non-orographic (general) gravity wave drag.
+more recently - moving away from imposing QBO; most of them have internally generated QBO; 
+
+How is QBO linked to other aspects of climate: 
+Holton and Tan 1980: connection to the polar vortex; esp during the easterly phase of the qbo the polar vortex is weak; diagram Garfinkel et al 2012 - proposes
+that it modulates the subtropical critical windline thereby affecting wave propagation into the stratosphere - however that theory perobably wrong
+
+Effects on sfc climate - Thompson et al 2001 , Marshall and Adam 2009
+Rind and Balachandran 1995; Marshall and Scaife 2009
+plot based on models  DJF SLP westerly minus easterly qbo (courtesy of Lawrence Coy (GMAO 610); Dunstone et al ...
+
+Also QBO and MJO: during boreal winter the QBO is coupled to the MJO with easterly phases of the QBO associated with enhanced precip over the western pacific and maritime continent and less precip over eastern pacific (Yoo and Son 2016, Son et al 2017)
+plot QBO East imnus West 20-100 day filtered OLR variance; model effect is weaker than OBS
+
+Composites of OLR leadxlongitude diagrams
+Fragile in models, stable in obs (until 2016 when abrupt disruption): Newman et al 2016, Osprey at al 2016, Coy et al 2017; Interestingly, while none of the seasonal forecasts predicted the disruption of 2015/16 , 
+the GISS Model CMIP6 does show such disruptions happening (more so for the more extreme scenarios - could it be that disruptions would be
+more frequent); but it may be that the QBO paramterization is too highly tuned to current climate; even high res simulations still rely primarily on parameterizied GWD to do most of the QBO forcing, 
+and most of that forcing comes from convective parameterizations that are poorly constrained by OBS. 
+Uncertainties in the spectrum of upward propagating tropical waves that force the QBO. Even estimate sof zonal forcing by different types of equatorial waves vary significantly among different reanalysis products. 
+Use of larger ensembles and more models casts doubt on the robustness of several QBO surface connections - how much are these relationships forced or reflections of internal variability?
