@@ -47,3 +47,11 @@ Vitart et al BAMS 2017: the S2S project dataset
 define early season weak vortex events as 1nov-1dec, u60 at 10hpa < -1signma (~10m/s)
 examples 1996, 2000, 2005, 2009
 
+seems that early onset events are predicted well at "weather" timescales; vertical resolution not terribly important for that skill;
+but resolution is likely important for simulating the aftermath/consequences,predictability. 
+
+the stratoshperic network for the assessment of predictability; 
+organized an effort to implement stratosph porject
+
+s2s prediction project data includes 50 and 10 hpa data only; subx has no stratospheric data;
+
