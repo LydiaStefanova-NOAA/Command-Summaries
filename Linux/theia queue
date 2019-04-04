@@ -1,0 +1,3 @@
+qstat -u $USER  # lists all my jobs
+
+qselect -u $USER | xargs qdel   # kills all my jobs
