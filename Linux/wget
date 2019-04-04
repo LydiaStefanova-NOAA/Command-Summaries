@@ -1,0 +1,2 @@
+wget -r -nH -e robots=off --cut-dirs=6 --no-parent --reject="index.html*" nomads.ncdc.noaa.gov/modeldata/cfsv2_forecast_ts_9mon/2012/201201/20120101/2012010100/
+(gets the contents of the given directory without creating full path (starts getting at depth --cut-dirs))
