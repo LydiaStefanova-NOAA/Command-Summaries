@@ -6,3 +6,5 @@
         ncks -v foo infile.nc foo.nc
     RENAME VARIABLE
         ncrename -v lat,latitude infile.nc
+    CONVERT FORMAT grib1/2 to nc
+         ncl_convert2nc filein.grib1 # creates filein.nc
