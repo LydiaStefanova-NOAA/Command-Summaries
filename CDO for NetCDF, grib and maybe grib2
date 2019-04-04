@@ -53,7 +53,7 @@
 
     MODIFY TIME
         cdo setdate/settime/setday/setmon/setyear/setunits - set all date/time/day/month/year/untis to given value
-        cdo setaxis,2011-01-16,12:00,1mon infile outfile # data starts on given date, incremented by given increment
+        cdo settaxis,2011-01-16,12:00,1mon infile outfile # data starts on given date, incremented by given increment
         cdo shifttime,-15days infile outfile # shift all timeteps by given value
    
     MODIFY VARIABLE NAMES/LEVELS
