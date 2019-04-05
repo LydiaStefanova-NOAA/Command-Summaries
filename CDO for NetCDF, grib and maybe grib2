@@ -1,5 +1,7 @@
     https://src.fedoraproject.org/repo/pkgs/cdo/cdo.pdf/90a93037089dddf6f8919b9d6c30bff7/cdo.pdf
     
+    CONVERT FROM GRIB TO NC
+        cdo -f nc copy icethk.2012030100.grib1 icethk.2012030100.nc
     GET INFORMATION ON FILE
         cdo sinfo infilec # shows a summary of contents
         cdo nvar infile # shows number of variables
