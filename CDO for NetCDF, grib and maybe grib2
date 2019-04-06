@@ -46,6 +46,8 @@
 
     SUBSET OF TIMES
         cdo seltimestep,timesteps infile outfile
+        cdo seltimestep,1/35 icecon.2012030100.nc test.nc  # select from 1 to 35
+
         cdo seldate,datestart,dateend infile outfile #format for date: YYYY-MM-DDThh:mm)
             (also seltime,selhour, selday, selmon, selyear, selseas, seldate)
             
