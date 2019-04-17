@@ -9,5 +9,5 @@ SCP to/from Jet. Only works if you've already established a login session.
 # scp from theia
 #scp -P 31662 Lydia.B.Stefanova@localhost:/path/to/file/on/remote localfile
 
-tcsh: alias cp2t "echo !:1 !:2"
+tcsh: alias cp2t "echo \!:1 \!:2"  # echos the first two arguments
 bash: alias myalias='function __myalias() { echo "Hello $*"; unset -f __myalias; }; __myalias'
