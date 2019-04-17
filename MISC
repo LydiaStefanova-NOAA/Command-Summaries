@@ -1,3 +1,4 @@
+ls -Slhr # sorted list by size (largest on bottom)
 
 alias go2jetP='ssh -L31662:localhost:31662 -XY Lydia.B.Stefanova@jet-rsa.princeton.rdhpcs.noaa.gov'
 
