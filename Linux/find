@@ -7,6 +7,7 @@ find . -name "*.txt"                            # wildcard
 find . -type f -empty                           # find empty files
 find /home -user username -mtime 7 -iname ".db" # find all .db files (ignoring case) modified in the last 7 days by user named username
 find . -maxdepth 3 -name test.sh                # max descent depth
+find . -size +500M                              # find files with size greater than (B, K, M, G)
 
 search multiple dirs
 --------------------
