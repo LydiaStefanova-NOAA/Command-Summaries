@@ -33,6 +33,7 @@ find files by text in the file (find + grep)
 find . -type f -name "*.java" -exec grep -l StringBuffer {} \;    # find StringBuffer in all *.java files
 find . -type f -name "*.java" -exec grep -il string {} \;         # ignore case with -i option
 find . -type f -name "*.gz" -exec zgrep 'GET /foo' {} \;          # search for a string in gzip'd files
+find . -type f -name "*.F*" -exec grep -Hn 'salt_flux' {} \;      # search for string, list file name and line number
 
 5 lines before, 10 lines after grep matches
 -------------------------------------------
