@@ -1,0 +1,21 @@
+USE "path/filename.nc"
+
+SHOW DATA/VARIABLES
+
+SET REGION/X=160E:130W  or SET REGION/X=1:20
+
+SET REGION /L=4  !L indicates the time index
+
+LET kappa=1
+LET/TITLE="SENSIBLE HEAT" sens_heat = kappa * (airt-sst) * wspd
+
+SHADE sens_heat
+SHADE/L=1/LEV=(-20,20,5)/Y=-90:40 sens_heat
+
+set region/X=160E:130W/Y=10S:10N/L=1
+shade prate_surface[L=1:140@AVE]
+
+CONTOUR/SIZE=0.12 temp[Z=0:200@LOC:20
+
+https://ferret.pmel.noaa.gov/Ferret/documentation/ferret-map-projections-demo
+https://ferret.pmel.noaa.gov/Ferret/documentation/users-guide/introduction/COMMAND-SYNTAX
