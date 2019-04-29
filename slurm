@@ -4,7 +4,7 @@ module load slurm
 
 sacctmgr show qos            # tells me what are available ques; https://slurm.schedmd.com/sacctmgr.html
 sshare -U $USER              # tells me what accounts are available to me
-squeue                       # used to view job and job step information for jobs managed by Slurm; see https://slurm.schedmd.com/squeue.html for options
+squeue -u $USER              # how's my job going
 sinfo                        # used to view partition and node information for a system running Slurm; see https://slurm.schedmd.com/sinfo.html
 
 
