@@ -8,6 +8,7 @@ sinfo                        # used to view partition and node information for a
 
 squeue -u $USER              # how's my job going
 scancel <jobid>              # cancel <jobid>
+sacctmgr list qos debug format=Name,MaxWall
 
 sbatch script.sh             # submits a batch script to Slurm; 
 
