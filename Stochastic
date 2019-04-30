@@ -77,9 +77,7 @@ crontab c384_stoch.crontab
 cd /scratch3/NCEPDEV/marine/noscrub/Lydia.B.Stefanova/benchmark2_stoch/20120101/EXPFV3/c384_stoch
 ./rocoto_viewer.py -d c384_stoch.db -w c384_stoch.xml 
 
-
-
-
+See also https://docs.google.com/presentation/d/1DegO_WU8i_3BcyaxrbXaeQ2w3s-yQgLNRNNyaZMMEJk/edit#slide=id.p
 
 
 
