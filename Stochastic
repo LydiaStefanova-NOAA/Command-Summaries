@@ -1,0 +1,83 @@
+Following https://vlab.ncep.noaa.gov/redmine/projects/emc_fv3-mom6-cice5/wiki/Fv3_mom6_cice5_workflow ,
+
+cd /scratch3/NCEPDEV/stmp1/Lydia.B.Stefanova/StochasticApril30
+
+git clone --recursive gerrit:global-workflow fv3gfs_benchmark   #Clone the workflow
+cd fv3gfs_benchmark                                             #Change directory to newly cloned workflow
+git checkout fv3_mom6_cice5_slurm                               #Check out the coupled workflow branch (for Theia with slurm)
+git submodule update --init --recursive                         #Update submodules if necessary 
+cd sorc                                                         #Change directory to sorc
+sh checkout.sh                                                  #Check out source code not in a submodule
+cd fv3gfs_benchmark/sorc                                        #Go to your $PATH_TO_CLONE/sorc directory                                       
+sh build_all.sh                                                 #Build all source codes
+sh link_fv3gfs.sh emc theia
+cd ../../
+vi fv3gfs_benchmark/parm/config/config.base
+
+      #-- make the following changes: 
+          export ACCOUNT="marine-cpu"
+          export ATARDIR="/NCEPDEV/$HPSS_PROJECT/5year/$USER/$machine/benchmark2_stoch/$PSLOT"
+          export HOMEDIR="/scratch3/NCEPDEV/marine/save/$USER"
+          export NOSCRUB="/scratch3/NCEPDEV/marine/noscrub/$USER"
+      #--
+
+vi fv3gfs_benchmark/ush/rocoto/cpl_setup.sh
+
+      #-- make the following changes: 
+          IDATE=2012010100
+          PSLOT=c384_stoch
+          COMROT=/scratch3/NCEPDEV/marine/noscrub/${USER}/benchmark2_stoch/${YMD}/COMFV3
+          EXPDIR=/scratch3/NCEPDEV/marine/noscrub/${USER}/benchmark2_stoch/${YMD}/EXPFV3
+          CONFIGDIR=/scratch3/NCEPDEV/stmp1/Lydia.B.Stefanova/StochasticApril30/fv3gfs_benchmark/parm/config
+      #---
+
+cp fv3gfs_benchmark/scripts/exglobal_fcst_nemsfv3gfs.sh fv3gfs_benchmark/scripts/exglobal_fcst_nemsfv3gfs.sh.original
+
+      #---look at Sara's /scratch4/BMC/mef/JTTI-workflow/fv3gfs_benchmark/scripts/exglobal_fcst_nemsfv3gfs.stochy.sh: 
+      
+diff /scratch4/BMC/mef/JTTI-workflow/fv3gfs_benchmark/scripts/exglobal_fcst_nemsfv3gfs.stochy.sh \\
+    /scratch4/BMC/mef/JTTI-workflow/fv3gfs_benchmark/scripts/exglobal_fcst_nemsfv3gfs.sh.orig > saradiff.txt
+    
+      #---change fv3gfs_benchmark/scripts/exglobal_fcst_nemsfv3gfs.sh accordingly: 
+          < DO_SKEB=${DO_SKEB:-"YES"}
+          < DO_SPPT=${DO_SPPT:-"YES"}
+          < if [ $MEMBER -gt -1000 ]; then
+          <   ntrunc = 766
+          <   lon_s = 1536
+          <   lat_s = 768
+          <   skeb = 0.6,-999,-999,-999,-999
+          <   iseed_skeb = 1999080800041
+          <   skeb_tau = 2.16E4,1.728E5,2.592E6,7.776E6,3.1536E7
+          <   skeb_lscale = 500.E3,1000.E3,2000.E3,2000.E3,2000.E3
+          <   skebnorm = 1
+          <   sppt = 0.8,0.4,0.2,0.08,0.04
+          <   iseed_sppt = 1999080800043,1999080800044,1999080800045,1999080800046,1999080800047
+          <   sppt_tau = 2.16E4,2.592E5,2.592E6,7.776E6,3.1536E7
+          <   sppt_lscale = 500.E3,1000.E3,2000.E3,2000.E3,2000.E3
+          <   sppt_logit = .TRUE.
+          <   sppt_sfclimit = .true.
+          <   use_zmtnblck = .true.
+      #--------
+      
+      #---make sure that the changes I made are the same as what sara did: 
+diff fv3gfs_benchmark/scripts/exglobal_fcst_nemsfv3gfs.sh fv3gfs_benchmark/scripts/exglobal_fcst_nemsfv3gfs.sh.original > lydiadiff.txt
+diff saradiff.txt lydiadiff.txt
+
+cd fv3gfs_benchmark/ush/rocoto/
+./cpl_setup.sh
+
+cd /scratch3/NCEPDEV/marine/noscrub/Lydia.B.Stefanova/benchmark2_stoch/20120101/EXPFV3/c384_stoch
+
+      #--- optional (didn't do): in *xml file make !ENTITY ARCHIVE_TO_HPSS "NO"> not YES to get output
+      
+module load rocoto/1.2.4
+crontab c384_stoch.crontab
+
+
+
+
+
+
+
+
+    
