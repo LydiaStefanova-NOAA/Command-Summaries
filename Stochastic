@@ -73,6 +73,11 @@ cd /scratch3/NCEPDEV/marine/noscrub/Lydia.B.Stefanova/benchmark2_stoch/20120101/
 module load rocoto/1.2.4
 crontab c384_stoch.crontab
 
+      #----To check on the run, while in:
+cd /scratch3/NCEPDEV/marine/noscrub/Lydia.B.Stefanova/benchmark2_stoch/20120101/EXPFV3/c384_stoch
+./rocoto_viewer.py -d c384_stoch.db -w c384_stoch.xml 
+
+
 
 
 
