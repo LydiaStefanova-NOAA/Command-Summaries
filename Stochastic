@@ -63,15 +63,15 @@ diff /scratch4/BMC/mef/JTTI-workflow/fv3gfs_benchmark/scripts/exglobal_fcst_nems
 diff fv3gfs_benchmark/scripts/exglobal_fcst_nemsfv3gfs.sh fv3gfs_benchmark/scripts/exglobal_fcst_nemsfv3gfs.sh.original > lydiadiff.txt
 diff saradiff.txt lydiadiff.txt
 
-cd fv3gfs_benchmark/ush/rocoto/
+cd /scratch3/NCEPDEV/stmp1/Lydia.B.Stefanova/StochasticApril30/fv3gfs_benchmark/ush/rocoto/
 ./cpl_setup.sh
 
 cd /scratch3/NCEPDEV/marine/noscrub/Lydia.B.Stefanova/benchmark2_stoch/20120101/EXPFV3/c384_stoch
 
       #--- optional (didn't do): in *xml file make !ENTITY ARCHIVE_TO_HPSS "NO"> not YES to get output
       
-module load rocoto/1.2.4
-crontab c384_stoch.crontab
+module load rocoto/1.3.0-RC3
+crontab c384_stoch.crontab   # or rocotorun 
 
       #----To check on the run, while in:
 cd /scratch3/NCEPDEV/marine/noscrub/Lydia.B.Stefanova/benchmark2_stoch/20120101/EXPFV3/c384_stoch
