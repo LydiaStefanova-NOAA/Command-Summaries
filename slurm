@@ -13,7 +13,8 @@ sacctmgr list qos debug format=Name,MaxWall
 sbatch script.sh             # submits a batch script to Slurm; 
 
 the script itself should start with something like: 
-#!/bin/bash -l               # -l (small L) option invokes ~/.cshrc settings
+#!/bin/bash -l               
+                             # -l (small L) option invokes ~/.cshrc settings (but #comments aren't allowed on that line)
 #SBATCH -A marine-cpu        # -A specifies the account
 #SBATCH -n 1                 # -n specifies the number of tasks (cores) (-N would be for number of nodes) 
 #SBATCH --exclusive          # exclusive use of node - hoggy but OK
