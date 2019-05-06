@@ -20,5 +20,6 @@ the script itself should start with something like:
 #SBATCH -q debug             # -q specifies the queue; debug has a 30 min limit, but the default walltime is only 5min, to change, see below:
 #SBATCH -t 30                # -t specifies walltime in minutes; if in debug, cannot be more than 30
 
-
-
+or
+#SBATCH -q batch
+#SBATCH -t 120      # or whatever else is appropriate
