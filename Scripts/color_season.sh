@@ -30,14 +30,14 @@ for yyyy in {2012..2018..111} ; do
             fi
 
             if [ $pass -eq 0 ] ; then
-               colors=" \" $color \" "
+               colors="\"$color\""
                pass=1
                else
-                   colors=" $colors , \" $color \" "
+                   colors="$colors, \"$color\""
             fi
 
         done
     done
 done
 
-#echo $colors
+echo "(/$colors/)"
