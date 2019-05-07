@@ -1,0 +1,7 @@
+; http://ncl.ucar.edu/Applications/list_dataP.shtml
+; Remove mean along nth dimention, preserve metadata
+      function dim_rmvmean_n_Wrap (	x : numeric,  dims [*] : integer )  
+; Smoothed annual cycle from daily data
+      ; http://ncl.ucar.edu/Applications/Scripts/climo_5.ncl
+
+
