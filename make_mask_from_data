@@ -1,0 +1,23 @@
+# cdo gtc,-10 SSTr_2012_01_01_1p0x1p0.nc testmask.nc    # create a mask containing 1 (if the field element is greater than -10), 0 (if not)
+# OR
+
+# Replace ocean values with 0 (by setting values above -10 to 0)
+  ncap2 -s 'where(sst>-10.) sst=0;' SSTr_2012_01_01_1p0x1p0.nc -O testmask.nc    
+
+# replace missing values (not ocean) with 1
+  cdo setmisstoc,1 testmask.nc testmask2.nc   
+
+# rename sst to land
+  cdo chname,sst,land testmask2.nc landmask_withtimestamp.nc
+
+# remove time dimension
+  ncwa -a time landmask_withtimestamp.nc landmask_withouttimestamp.nc
+
+# remove time variable
+  ncks -x -v time landmask_withouttimestamp.nc landmask.nc
+
+# make grib2 landmask file
+  cdo -f grb2 copy landmask.nc landmask.grb2
+
+
+
