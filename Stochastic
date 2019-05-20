@@ -79,8 +79,30 @@ cd /scratch3/NCEPDEV/marine/noscrub/Lydia.B.Stefanova/benchmark2_stoch/20120101/
 
 See also https://docs.google.com/presentation/d/1DegO_WU8i_3BcyaxrbXaeQ2w3s-yQgLNRNNyaZMMEJk/edit#slide=id.p
 
-
-
+-------
+Setting up so that the stochastic model seed changes between IC dates
+diff CORRECTexglobal_fcst_nemsfv3gfs.sh PREVIOUSexglobal_fcst_nemsfv3gfs.sh): 
+440,445c440
+<   #ISEED_SPPT=$((CDATE*1000 + MEMBER*10 + 3))
+<   ISEED_SPPT1=$((CDATE*1000 + MEMBER*10 + 3))
+<   ISEED_SPPT2=$((CDATE*1000 + MEMBER*10 + 4))
+<   ISEED_SPPT3=$((CDATE*1000 + MEMBER*10 + 5))
+<   ISEED_SPPT4=$((CDATE*1000 + MEMBER*10 + 6))
+<   ISEED_SPPT5=$((CDATE*1000 + MEMBER*10 + 7))
+---
+>   ISEED_SPPT=$((CDATE*1000 + MEMBER*10 + 3))
+842d836
+<   #iseed_skeb = 9999080800041
+846c840
+<   iseed_skeb = $ISEED_SKEB
+---
+>   iseed_skeb = 9999080800041
+863d856
+<   #iseed_sppt = 9999080800043,9999080800044,9999080800045,9999080800046,9999080800047
+867c860
+<   iseed_sppt = $ISEED_SPPT1, $ISEED_SPPT2, $ISEED_SPPT3, $ISEED_SPPT4, $ISEED_SPPT5
+---
+>   iseed_sppt = 9999080800043,9999080800044,9999080800045,9999080800046,9999080800047
 
 
     
