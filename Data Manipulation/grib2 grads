@@ -1,0 +1,2 @@
+g2ctl gfs.t00z.flux.1p00.f006 > flux.ctl
+gribmap
