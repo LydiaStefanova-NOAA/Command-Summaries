@@ -72,6 +72,9 @@ cd /scratch3/NCEPDEV/marine/noscrub/Lydia.B.Stefanova/benchmark2_stoch/20120101/
       
 module load rocoto/1.3.0-RC3
 crontab c384_stoch.crontab   # or rocotorun 
+### to add to existing cron,  
+crontab -l | cat - *.crontab > newcron.txt
+crontab newcron.txt
 
       #----To check on the run, while in:
 cd /scratch3/NCEPDEV/marine/noscrub/Lydia.B.Stefanova/benchmark2_stoch/20120101/EXPFV3/c384_stoch
@@ -103,6 +106,11 @@ diff CORRECTexglobal_fcst_nemsfv3gfs.sh PREVIOUSexglobal_fcst_nemsfv3gfs.sh):
 <   iseed_sppt = $ISEED_SPPT1, $ISEED_SPPT2, $ISEED_SPPT3, $ISEED_SPPT4, $ISEED_SPPT5
 ---
 >   iseed_sppt = 9999080800043,9999080800044,9999080800045,9999080800046,9999080800047
+
+ADDED variable SEEDLET in 
+scripts/exglobal_fcst_nemsfv3gfs.sh
+and
+ush/rocoto/cpl_setup.sh
 
 
     
