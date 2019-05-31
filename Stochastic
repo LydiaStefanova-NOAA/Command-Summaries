@@ -83,8 +83,9 @@ cd /scratch3/NCEPDEV/marine/noscrub/Lydia.B.Stefanova/benchmark2_stoch/20120101/
 See also https://docs.google.com/presentation/d/1DegO_WU8i_3BcyaxrbXaeQ2w3s-yQgLNRNNyaZMMEJk/edit#slide=id.p
 
 -------
+
 Setting up so that the stochastic model seed changes between IC dates
-diff CORRECTexglobal_fcst_nemsfv3gfs.sh PREVIOUSexglobal_fcst_nemsfv3gfs.sh): 
+diff: 
 440,445c440
 <   #ISEED_SPPT=$((CDATE*1000 + MEMBER*10 + 3))
 <   ISEED_SPPT1=$((CDATE*1000 + MEMBER*10 + 3))
@@ -107,10 +108,13 @@ diff CORRECTexglobal_fcst_nemsfv3gfs.sh PREVIOUSexglobal_fcst_nemsfv3gfs.sh):
 ---
 >   iseed_sppt = 9999080800043,9999080800044,9999080800045,9999080800046,9999080800047
 
--- May 30
+-- May 30 Note:
 a) For repeat runs of same year with different seeds, ADDED variable SEEDLET in scripts/exglobal_fcst_nemsfv3gfs.sh and ush/rocoto/cpl_setup.sh
 b) Undid that change because it's causing trouble unless I wait until after the warm start to edit exglobal for a new run; need a way to 
 pass SEEDLET as an environmental variable to exglobal and cpl_setup; Setting it in cpl_setup or config.base does not work correctly.
 
-
+-- May 31 Note:
+git log
+git status
+git diffbase
     
