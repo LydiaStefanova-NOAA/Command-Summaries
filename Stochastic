@@ -107,10 +107,10 @@ diff CORRECTexglobal_fcst_nemsfv3gfs.sh PREVIOUSexglobal_fcst_nemsfv3gfs.sh):
 ---
 >   iseed_sppt = 9999080800043,9999080800044,9999080800045,9999080800046,9999080800047
 
-ADDED variable SEEDLET in 
-scripts/exglobal_fcst_nemsfv3gfs.sh
-and
-ush/rocoto/cpl_setup.sh
+-- May 30
+a) For repeat runs of same year with different seeds, ADDED variable SEEDLET in scripts/exglobal_fcst_nemsfv3gfs.sh and ush/rocoto/cpl_setup.sh
+b) Undid that change because it's causing trouble unless I wait until after the warm start to edit exglobal for a new run; need a way to 
+pass SEEDLET as an environmental variable to exglobal and cpl_setup; Setting it in cpl_setup or config.base does not work correctly.
 
 
     
