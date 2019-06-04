@@ -118,3 +118,7 @@ git log
 git status
 git diffbase
     
+-- June 4 Note: 
+To make the SEEDLET an environmental variable that is passed to scripts/exglobal_fcst_nemsfv3gfs.sh , 
+set it in parm/config/config.fcst AND in ush/rocoto/cpl_setup.sh
+
