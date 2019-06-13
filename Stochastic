@@ -5,6 +5,9 @@ cd /scratch3/NCEPDEV/stmp1/Lydia.B.Stefanova/StochasticApril30
 git clone --recursive gerrit:global-workflow fv3gfs_benchmark   #Clone the workflow
 cd fv3gfs_benchmark                                             #Change directory to newly cloned workflow
 git checkout fv3_mom6_cice5_slurm                               #Check out the coupled workflow branch (for Theia with slurm)
+
+                  [ git checkout fv3-coupled-stochastic # To get my new branch; do that instead of the previous although doesn't matter ]
+                  
 git submodule update --init --recursive                         #Update submodules if necessary 
 cd sorc                                                         #Change directory to sorc
 sh checkout.sh                                                  #Check out source code not in a submodule
@@ -121,4 +124,23 @@ git diffbase
 -- June 4 Note: 
 To make the SEEDLET an environmental variable that is passed to scripts/exglobal_fcst_nemsfv3gfs.sh , 
 set it in parm/config/config.fcst AND in ush/rocoto/cpl_setup.sh
+
+
+-- June 13 Note: 
+ cd StochasticApril30/
+ cd fv3gfs_benchmark/
+ git status
+ git add jobs/rocoto/ocnpost.sh parm/config/config.base parm/config/config.fcst ush/rocoto/cpl_setup.sh scripts/exglobal_fcst_nemsfv3gfs.sh.*
+ git checkout -b fv3-coupled-stochastic
+ git push origin fv3-coupled-stochastic
+ 
+ Now, to get this, see the square brackets earlier on. 
+ Remember to do a soft link or copy of the appropriate scripts/exglobal_fcst_nemsfv3gfs.sh
+
+--- TMP SCRATCH
+FV3 hash for BM2
+commit 72bbca23b5cd2bedc69d2c81a3a7cb4843be4287
+
+Commit to cherrypick
+commit a4b7a48b3b2b20072c1a2600226e9cb112017b68
 
