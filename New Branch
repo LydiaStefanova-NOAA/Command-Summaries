@@ -1,0 +1,23 @@
+   877	15:13	git add jobs/rocoto/ocnpost.sh parm/config/config.base parm/config/config.fcst ush/rocoto/cpl_setup.sh scripts/exglobal_fcst_nemsfv3gfs.sh.*
+   878	15:17	git checkout -b fv3-coupled-stochastic
+   879	15:18	git push origin fv3-coupled-stochastic
+   
+   
+   
+   971	16:43	git clone --recursive gerrit:global-workflow fv3gfs_benchmark
+   972	16:43	cd fv3gfs_benchmark
+   973	16:44	git checkout fv3_mom6_cice5_slurm
+   974	16:44	git submodule update --init --recursive
+   975	16:44	vi checkout.sh
+   
+   <edit "You want to change in sorc/checkout.sh to instead checkout the branch bm2withCA of EMC_FV3-MOM6-CICE5 
+   [& then the namelist changes from Lisa and you should be good to go. ]> 
+   
+   976	16:47	checkout.sh
+   977	16:47	./checkout.sh
+   978	16:50	sh build_all.sh
+   979	17:58	sh link_fv3gfs.sh emc theia
+   
+   
+   
+   diff scripts/exglobal_fcst_nemsfv3gfs.sh ../../StochasticApril30/fv3gfs_benchmark/scripts/exglobal_fcst_nemsfv3gfs.sh
