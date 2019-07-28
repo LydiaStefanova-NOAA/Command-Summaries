@@ -1,0 +1,53 @@
+1. CA on deep convection
+nca            = 1
+ncells         = 5
+nfracseed      = 0.5
+nlives         = 10
+nthresh        = 0.
+nseed          = 100000
+do_ca          = .true.
+ca_global      = .false.
+ca_sgs         = .true.
+ca_smooth      = .false.
+isppt_deep     = .false.
+nspinup        = 1000
+iseed_ca       = 0
+pert_trigger     = .true.
+pert_flux        = .true.
+ca_amplitude   = 300.
+
+2. CA on deep + shallow convection
+nca            = 2
+ncells         = 5
+nfracseed      = 0.5
+nlives         = 10
+nthresh        = 0.
+nseed          = 100000
+do_ca          = .true.
+ca_global      = .false.
+ca_sgs         = .true.
+ca_smooth      = .false.
+isppt_deep     = .false.
+nspinup        = 1000
+iseed_ca       = 0
+pert_trigger     = .true.
+pert_flux        = .true.
+ca_amplitude   = 300.
+
+3. CA on deep + shallow convection + PBL 
+nca            = 3
+ncells         = 5
+nfracseed      = 0.5
+nlives         = 10
+nthresh        = 0.
+nseed          = 100000
+do_ca          = .true.
+ca_global      = .false.
+ca_sgs         = .true.
+ca_smooth      = .false.
+isppt_deep     = .false.
+nspinup        = 1000
+iseed_ca       = 0
+pert_trigger     = .true.
+pert_flux        = .true.
+ca_amplitude   = 300.
