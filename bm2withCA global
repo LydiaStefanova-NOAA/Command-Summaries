@@ -1,0 +1,11 @@
+git clone --recursive gerrit:global-workflow bm2withCA
+cd bm2withCA
+git checkout fv3_mom6_cice5_slurm
+cd sorc
+vi checkout.sh --> change in the fv3gfs checkout "git clone --recursive gerrit" to just "git clone gerrit" 
+                   and "git clone v3.0.1" to  "git clone bm2withCA" 
+bash checkout.sh
+bash build_all.sh
+sh link_fv3gfs.sh emc theia
+
+
