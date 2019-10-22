@@ -8,4 +8,23 @@ bash checkout.sh
 bash build_all.sh
 sh link_fv3gfs.sh emc theia
 
+Q: How to update FV3 and Coupled app after changes?
+A:
+  
+  1037	18:06	cd ./sorc/fv3gfs.fd/FV3/gfsphysics/GFS_layer/
+  1039	18:08	git branch -r
+  1040	18:10	git checkout --track origin/bm2withCA2
+  1041	18:10	git add gfsphysics/GFS_layer/GFS_physics_driver.F90
+  1043	18:11	git add GFS_physics_driver.F90
+  1047	18:13	cd ../../../../../
+  1049	18:14	cd .sorc/fv3gfs.fd/
+  1050	18:14	ls
+  1052	18:14	git add FV3
+  1056	18:15	vi checkout.sh
+  1057	18:15	cd ../
+  1061	18:17	git checkout -b FV3-MOM6-CICE5-withCA
+  1062	18:18	git add parm/config/config.base parm/config/config.fcst scripts/exglobal_fcst_nemsfv3gfs.sh sorc/checkout.sh ush/rocoto/cpl_setup.sh
+  1063	18:18	git commit
+  1064	18:19	git push
+  1065	18:19	git status
 
