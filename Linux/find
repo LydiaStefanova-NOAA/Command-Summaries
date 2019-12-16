@@ -8,6 +8,7 @@ find . -type f -empty                           # find empty files
 find /home -user username -mtime 7 -iname ".db" # find all .db files (ignoring case) modified in the last 7 days by user named username
 find . -maxdepth 3 -name test.sh                # max descent depth
 find . -size +500M                              # find files with size greater than (B, K, M, G)
+find ../../Models/ufs_b3/SeaIce/20120101/6hrly/ -name "ice*" -not -size 87095864c # find files with size not matching specification
 
 search multiple dirs
 --------------------
