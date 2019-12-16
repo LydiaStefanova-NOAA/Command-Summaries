@@ -45,6 +45,7 @@ find files and act on them (find + exec)
 find /usr/local -name "*.html" -type f -exec chmod 644 {} \;      # change html files to mode 644
 find htdocs cgi-bin -name "*.cgi" -type f -exec chmod 755 {} \;   # change cgi files to mode 755
 find . -name "*.pl" -exec ls -ld {} \;                            # run ls command on files found
+find ../../Models/ufs_b3/SeaIce/20120101/6hrly/ -name "ice*" -exec stat --format=%s {} \;    # show size of files matching pattern
 
 find and copy
 -------------
