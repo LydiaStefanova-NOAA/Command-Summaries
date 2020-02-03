@@ -1,0 +1,3 @@
+To get a specific branch (gross.1.1.0.0) from a repository (https://github.com/rgrumbine/ice_scoring.git):
+
+git clone --single-branch --branch gross.1.1.0.0 https://github.com/rgrumbine/ice_scoring.git
