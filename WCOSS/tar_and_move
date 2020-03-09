@@ -1,0 +1,9 @@
+While on WCOSS, 
+To tar:
+cd /ptmpd3/Jessica.Meixner/rtgen.46390/tmp
+tar -cvf /ptmpd3/Lydia.B.Stefanova/original.006.tar */dyn*006*tile*
+cd /ptmpd3/Jessica.Meixner/rtgen.38637/tmp
+tar -cvf /ptmpd3/Lydia.B.Stefanova/new.006.tar */dyn*006*tile*
+
+To copy to hera:
+scp /ptmpd3/Lydia.B.Stefanova/*tar Lydia.B.Stefanova@dtn-hera.rdhpcs.noaa.gov:/scratch1/NCEPDEV/stmp2/Lydia.B.Stefanova/RegressionTests/
