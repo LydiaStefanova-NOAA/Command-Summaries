@@ -1,0 +1,16 @@
+https://oriondocs.rdhpcs.noaa.gov/wiki/index.php/Main_Page
+https://drive.google.com/file/d/1VRsd9xWSGroNHetmnJcHWNNeo23DxehO/view
+https://intranet.hpc.msstate.edu/helpdesk/resource-docs/system_user_guide.php#transfer
+
+To copy a file from a remote host to local host:
+
+ $ scp  <username>@<remotehost>:/path/to/file.txt  /local/directory
+To copy a file from a local host to a remote host:
+
+ $ scp  /path/to/file.txt  <username>@<remotehost>:/remote/directory
+To copy a directory from a remote host to local host:
+
+ $ scp  -r  <username>@<remotehost>:/remote/directory  /local/directory
+To copy a directory from a local host to a remote host:
+
+ $ scp  -r  /local/directory  <username>@<remotehost>:/remote/directory
