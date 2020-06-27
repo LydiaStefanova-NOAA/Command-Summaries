@@ -1,3 +1,16 @@
 To get a specific branch (gross.1.1.0.0) from a repository (https://github.com/rgrumbine/ice_scoring.git):
 
 git clone --single-branch --branch gross.1.1.0.0 https://github.com/rgrumbine/ice_scoring.git
+
+https://github.com/NOAA-EMC/NCEPLIBS-nemsio/blob/develop/README.md
+
+   656	15:17	git checkout -b feature/greatchange
+   657	15:18	git push --set-upstream origin feature/greatchange
+   658	15:21	git commit -a anoms12.sh common_settings.sh drive_anoms.sh drive_mapobs.sh drive_preprocess.sh get_exp.sh graph_settings.sh map_compare_obs.sh map_compare_obs2.sh preprocess.sh
+   659	15:22	git add anoms12.sh
+   661	15:23	git add drive_mapnoobs.sh drive_nino.sh testgrads.gs
+   662	15:24	git add common_settings.sh drive_anoms.sh drive_mapobs.sh
+   663	15:24	git add drive_preprocess.sh get_exp.sh graph_settings.sh map_compare_obs.sh map_compare_obs2.sh preprocess.sh
+   664	15:25	git commit
+   665	15:25	git push
+
