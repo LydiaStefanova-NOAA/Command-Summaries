@@ -3,7 +3,7 @@ https://drive.google.com/file/d/1VRsd9xWSGroNHetmnJcHWNNeo23DxehO/view
 https://intranet.hpc.msstate.edu/helpdesk/resource-docs/system_user_guide.php#transfer
 
 Log on to Orion: 
-ssh lstefano@orion-login.hpc.msstate.edu
+ssh -XY lstefano@orion-login.hpc.msstate.edu
 
 module load contrib noaatools
 saccount_params  # tells you where you have access
