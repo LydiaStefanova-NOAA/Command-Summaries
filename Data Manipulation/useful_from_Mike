@@ -1,0 +1,5 @@
+ncks -v tsfcl sfc_data.tile3.nc tsfcl.tile3.nc
+ncrename -v tsfcl,temperature tsfcl.tile3.nc
+ncks -v stc -d zaxis_1,0,0 sfc_data.tile3.nc stc.tile3.nc
+ncrename -v stc,temperature stc.tile3.nc
+ncdiff tsfcl.tile3.nc stc.tile3.nc tsfcl-stc.tile3.nc
